@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Relation W/C activation visualizations</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #17202a;
+      background: #f4f7fb;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { width: min(1040px, calc(100% - 36px)); margin: 0 auto; padding: 64px 0 80px; }
+    a { color: inherit; }
+    .back { color: #36566f; font-size: 14px; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    h1 { margin: 24px 0 12px; font-size: clamp(32px, 5vw, 52px); line-height: 1.06; letter-spacing: -0.035em; }
+    .lede { max-width: 760px; margin: 0; color: #526474; font-size: 17px; line-height: 1.65; }
+    .models { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 38px; }
+    .model {
+      display: flex;
+      min-height: 190px;
+      padding: 24px;
+      border: 1px solid #d7e0e8;
+      border-radius: 14px;
+      background: white;
+      box-shadow: 0 8px 28px rgba(28, 52, 71, 0.07);
+      text-decoration: none;
+      flex-direction: column;
+      transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
+    }
+    .model:hover { transform: translateY(-2px); border-color: #94b7d1; box-shadow: 0 12px 32px rgba(28, 52, 71, 0.12); }
+    .model small { color: #6a7c8b; font-weight: 650; letter-spacing: 0.04em; text-transform: uppercase; }
+    .model h2 { margin: 14px 0 8px; font-size: 22px; line-height: 1.25; }
+    .model p { margin: 0; color: #607382; font-size: 14px; line-height: 1.5; }
+    .open { margin-top: auto; padding-top: 22px; color: #1769aa; font-weight: 700; }
+    .note { margin-top: 32px; padding-top: 20px; border-top: 1px solid #dce4ec; color: #687b8a; font-size: 13px; line-height: 1.55; }
+    @media (max-width: 760px) { .models { grid-template-columns: 1fr; } .model { min-height: 160px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="../">&larr; Home</a>
+    <h1>Relation W/C activation visualizations</h1>
+    <p class="lede">
+      Interactive Plotly views of relation representations across transformer layers. Choose a model to inspect
+      user-name or assistant-prefix activations, held-out warmth/competence readout, PCA geometry, and W/C-plane metrics.
+    </p>
+    <section class="models" aria-label="Available models">
+      <a class="model" href="./gemma4_31b/">
+        <small>Google</small>
+        <h2>Gemma 4 31B</h2>
+        <p>60 transformer layers</p>
+        <span class="open">Open visualization &rarr;</span>
+      </a>
+      <a class="model" href="./mistral_small_3_2_24b/">
+        <small>Mistral AI</small>
+        <h2>Mistral Small 3.2 24B</h2>
+        <p>40 transformer layers</p>
+        <span class="open">Open visualization &rarr;</span>
+      </a>
+      <a class="model" href="./olmo_3_1_32b/">
+        <small>Allen Institute for AI</small>
+        <h2>OLMo 3.1 32B</h2>
+        <p>64 transformer layers</p>
+        <span class="open">Open visualization &rarr;</span>
+      </a>
+    </section>
+    <p class="note">
+      The W/C directions are fit with frozen external-LLM labels. Held-out readout and same-sample PCA geometry are
+      different estimands; these visualizations do not by themselves establish causal or universal social representations.
+    </p>
+  </main>
+</body>
+</html>
