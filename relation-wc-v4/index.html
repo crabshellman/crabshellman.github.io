@@ -50,6 +50,7 @@
     }
     .causal small { color: #6d28d9; font-weight: 750; letter-spacing: 0.06em; text-transform: uppercase; }
     .causal h2 { margin: 8px 0 5px; font-size: 22px; }
+    .causal p { margin: 8px 0 0; color: #526474; font-size: 14px; line-height: 1.5; }
     .causal-link {
       flex: 0 0 auto;
       padding: 10px 14px;
@@ -60,6 +61,10 @@
       text-decoration: none;
     }
     .causal-link:hover { background: #5b21b6; }
+    .multimodal { border-color: #c5ddeb; background: linear-gradient(135deg, #f3faff, #f3f8fb); }
+    .multimodal small { color: #1769aa; }
+    .multimodal .causal-link { background: #1769aa; }
+    .multimodal .causal-link:hover { background: #135a92; }
     .note { margin-top: 32px; padding-top: 20px; border-top: 1px solid #dce4ec; color: #687b8a; font-size: 13px; line-height: 1.55; }
     @media (max-width: 760px) {
       .models { grid-template-columns: 1fr; }
@@ -102,6 +107,14 @@
         <h2>Gemma 4 31B · four social choices</h2>
       </div>
       <a class="causal-link" href="./gemma-causal/">Open report &rarr;</a>
+    </section>
+    <section class="causal multimodal" aria-label="Famous people name and portrait report">
+      <div>
+        <small>Cross-modal W/C report</small>
+        <h2>Gemma 4 31B · names and portraits</h2>
+        <p>Ten people · full-name means · source-centered, name-derived W/C axes.</p>
+      </div>
+      <a class="causal-link" href="./gemma-famous-people/">Open report &rarr;</a>
     </section>
     <p class="note">
       The W/C directions are fit with frozen external-LLM labels.
